@@ -1,16 +1,17 @@
 {
   "name": "vue-template-app",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
-    "format": "prettier .  --write"
+    "dev": "vite",
+    "format": "prettier .  --write",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.7",
+    "@heroicons/vue": "^2.0.13",
     "pinia": "^2.0.24",
     "vue": "^3.2.41"
   },
@@ -20,11 +21,15 @@
     "@vitejs/plugin-vue": "^3.2.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.28.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.7.0",
+    "postcss": "^8.4.20",
     "prettier": "^2.7.1",
-    "vite": "^3.2.3"
+    "tailwindcss": "^3.2.4",
+    "vite": "^3.2.3",
+    "vue-cli-plugin-tailwind": "~3.0.0"
   },
   "husky": {
     "hooks": {
@@ -33,5 +38,6 @@
   },
   "lint-staged": {
     "*.{ts,vue}": "eslint --fix"
-  }
+  },
+  "type": "module"
 }

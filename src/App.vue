@@ -8,12 +8,18 @@
     </a>
   </div>
   <p>asfassfa</p>
-  <HelloWorld msg="Vite =+ Vue" />
+  <!-- <HelloWorld msg="Vite =+ Vue" />-->
+  <ExampleCompVue />
+  <div class="bg-blue-500">
+    <h1>holaafsa</h1>
+  </div>
   <p>asfasfa</p>
 </template>
 
 <script lang="ts" setup>
   import HelloWorld from './components/HelloWorld.vue'
+  import ExampleCompVue from './components/ExampleComp.vue'
+  import '@/assets/tailwind.css'
 </script>
 
 <style scoped>
