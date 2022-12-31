@@ -16,5 +16,10 @@
     "ecmaVersion": 2022
   },
   "plugins": [],
-  "rules": {}
+  "rules": {
+    "prettier/prettier": 
+    [ "error",
+      { "endOfLine": "auto" }
+    ]
+  }
 }
