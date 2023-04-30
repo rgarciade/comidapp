@@ -1,15 +1,12 @@
-import Vue from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-
-const routes: any = [{ path: '/hello', component: HelloWorld }]
+import recipeView from './components/recipeView.vue'
 
 export default createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: '/',
-      component: HelloWorld,
+      component: recipeView,
     } /* ,
       {
         path: '/about',
