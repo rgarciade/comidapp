@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import "@/assets/tailwind.css";
+  import '@/assets/tailwind.css'
 </script>
 
 <style scoped></style>
