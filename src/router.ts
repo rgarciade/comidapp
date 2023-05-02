@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import recipeView from './components/recipeView.vue'
+import recipeView from './views/recipeView.vue'
 
 export default createRouter({
   history: createWebHistory(),
