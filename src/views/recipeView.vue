@@ -49,6 +49,10 @@
   <div class="flex-col h-screen">
     <div class="flex-none h-3/6">
       <img
+        src="../assets/bookmark.svg"
+        class="w-14 absolute right-4 bg-white rounded-full p-2 top-3"
+      />
+      <img
         class="h-full object-cover"
         src="https://www.comedera.com/wp-content/uploads/2021/12/ensalada-de-lechuga1.jpg"
         alt="receta"
@@ -73,7 +77,7 @@
             {{ servings }} raciones
           </div>
         </div>
-        <img src="../assets/bookmark.svg" class="w-10" />
+        <img src="../assets/add.svg" class="w-10" />
       </div>
       <div id="ingredients" class="pt-5 pb-12">
         <ul class="list-none text-2xl">
@@ -89,6 +93,13 @@
             </p>
           </li>
         </ul>
+      </div>
+      <div id="start" class="pb-10 flex-col grid gap-4 place-content-center">
+        <img
+          src="src/assets/right-arrow-white.svg"
+          class="w-16 bg-primary object-center rounded-full p-4 place-self-center"
+        />
+        <p class="text-primary font-extrabold">¿Listo? Comenzar a cocinar</p>
       </div>
     </div>
   </div>
