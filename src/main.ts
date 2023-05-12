@@ -3,7 +3,17 @@ import { createPinia } from 'pinia'
 import './style.css'
 import App from './App.vue'
 import router from './router'
+import iconComp from './components/iconComp.vue'
 
-const pinia = createPinia()
+const status = createPinia()
 
-createApp(App).use(pinia).use(router).mount('#app')
+const app = createApp(App)
+
+//uses
+app.use(status)
+app.use(router)
+//components
+app.component('IconComp', iconComp)
+
+//mount
+app.mount('#app')

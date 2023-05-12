@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+  import { ref } from 'vue'
+
   const ingredients = [
     {
       name: 'Lechuga',
@@ -40,20 +42,53 @@
       quantity: '1',
       unit: 'pizca',
     },
+    {
+      name: 'Queso feta',
+      quantity: '100',
+      unit: 'gramos',
+    },
+  ]
+  const steps = [
+    {
+      name: 'Lavar y cortar la lechuga',
+    },
+    {
+      name: 'Lavar y cortar el pepino',
+    },
+    {
+      name: 'Lavar y cortar el tomate',
+    },
+    {
+      name: 'Pelar y cortar la cebolla',
+    },
+    {
+      name: 'Mezclar todos los ingredientes',
+    },
+    {
+      name: 'Aliñar con aceite, vinagre, sal y pimienta',
+    },
   ]
   const cookingTime = 25
   const servings = 2
+  const seeStartCooking = ref(false)
+
+  addEventListener('scroll', () => {
+    window.scrollY < 100
+      ? (seeStartCooking.value = false)
+      : (seeStartCooking.value = true)
+  })
 </script>
 
 <template>
   <div class="flex-col h-screen">
     <div class="flex-none h-3/6">
-      <img
-        src="../assets/bookmark.svg"
+      <IconComp
+        src="bookmark"
         class="w-14 absolute right-4 bg-white rounded-full p-2 top-3"
       />
+
       <img
-        class="h-full object-cover"
+        class="h-full object-cover w-full"
         src="https://www.comedera.com/wp-content/uploads/2021/12/ensalada-de-lechuga1.jpg"
         alt="receta"
       />
@@ -77,16 +112,17 @@
             {{ servings }} raciones
           </div>
         </div>
-        <img src="../assets/add.svg" class="w-10" />
+        <IconComp src="add" class="w-10" />
       </div>
       <div id="ingredients" class="pt-5 pb-12">
+        <h3 class="font-bold pb-2 pt-2">Ingredientes</h3>
         <ul class="list-none text-2xl">
           <li
-            v-bind:key="ingredient"
             v-for="ingredient in ingredients"
+            :key="ingredient"
             class="pt-3 flex gap-2"
           >
-            <img src="../assets/check.svg" class="w-8 h-8" />
+            <IconComp src="check" class="w-8 h-8" />
             <p>
               {{ ingredient.quantity }} {{ ingredient.unit }} de
               {{ ingredient.name }}
@@ -94,13 +130,25 @@
           </li>
         </ul>
       </div>
-      <div id="start" class="pb-10 flex-col grid gap-4 place-content-center">
-        <img
-          src="src/assets/right-arrow-white.svg"
-          class="w-16 bg-primary object-center rounded-full p-4 place-self-center"
-        />
-        <p class="text-primary font-extrabold">¿Listo? Comenzar a cocinar</p>
+      <div id="steps" class="pt-5 pb-28">
+        <h3 class="font-bold pb-2 pt-2">Pasos</h3>
+        <ul class="list-none text-2xl">
+          <li v-for="step in steps" :key="step" class="pt-3 flex gap-2">
+            <span class="w-4 mt-4 mb-4 h-1 bg-primary"></span>
+            <p>
+              {{ step.name }}
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
+  <div
+    v-if="seeStartCooking"
+    id="start"
+    class="h-16 w-11/12 bg-primary object-center rounded-full place-self-center flex gap-2 items-center justify-center fixed bottom-6 ml-auto mr-auto left-0 right-0"
+  >
+    <IconComp src="right-arrow-white" class="h-10 border-2 p-2 rounded-full" />
+    <p class="text-white font-extrabold">¿Listo? Comenzar a cocinar</p>
   </div>
 </template>
