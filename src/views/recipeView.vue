@@ -99,17 +99,11 @@
       <h3 class="font-bold">Grilled fist whith tomatoes & mushrooms</h3>
       <div id="info" class="flex pt-10 border-b-2 pb-8">
         <div class="flex w-11/12 gap-4 pr-44">
-          <div
-            id="cooking-time"
-            class="flex-none bg-amber-100 p-2 pl-4 pr-4 rounded-full"
-          >
-            {{ cookingTime }} min
+          <div id="cooking-time" class="flex-none">
+            <info-comp :text="`${cookingTime} min`" />
           </div>
-          <div
-            id="servings"
-            class="flex-none flex-none bg-amber-100 p-2 pl-4 pr-4 rounded-full"
-          >
-            {{ servings }} raciones
+          <div id="servings" class="flex-none">
+            <info-comp :text="`${servings} raciones`" />
           </div>
         </div>
         <IconComp src="add" class="w-10" />
